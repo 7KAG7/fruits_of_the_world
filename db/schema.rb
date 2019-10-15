@@ -10,27 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_182942) do
+ActiveRecord::Schema.define(version: 2019_10_15_182758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "countries_tables", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "description", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "fruits_of_countries_tables", force: :cascade do |t|
-    t.bigint "fruits_id"
-    t.bigint "countries_id"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["countries_id"], name: "index_fruits_of_countries_tables_on_countries_id"
-    t.index ["fruits_id"], name: "index_fruits_of_countries_tables_on_fruits_id"
-  end
 
   create_table "fruits_tables", force: :cascade do |t|
     t.string "name", null: false
@@ -38,16 +21,6 @@ ActiveRecord::Schema.define(version: 2019_10_15_182942) do
     t.string "sci_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "reviews_tables", force: :cascade do |t|
-    t.bigint "fruit_id"
-    t.bigint "user_id"
-    t.text "review", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["fruit_id"], name: "index_reviews_tables_on_fruit_id"
-    t.index ["user_id"], name: "index_reviews_tables_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
