@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_10_16_171914) do
+=======
+ActiveRecord::Schema.define(version: 2019_10_15_182758) do
+>>>>>>> 561882a4a7632bc4c06ac5e9ae5a5405ab472e07
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "fruits", force: :cascade do |t|
+=======
+  create_table "fruits_tables", force: :cascade do |t|
+>>>>>>> 561882a4a7632bc4c06ac5e9ae5a5405ab472e07
     t.string "name", null: false
     t.text "description", null: false
     t.string "sci_name"
@@ -23,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_10_16_171914) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "fruit_id"
@@ -34,6 +43,8 @@ ActiveRecord::Schema.define(version: 2019_10_16_171914) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+=======
+>>>>>>> 561882a4a7632bc4c06ac5e9ae5a5405ab472e07
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
