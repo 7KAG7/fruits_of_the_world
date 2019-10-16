@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.belongs_to :user
       t.belongs_to :fruit
       t.integer :rating, null: false
-      t.text :body, null: false
+      t.text :body
 
       t.timestamps
     end

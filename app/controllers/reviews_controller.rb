@@ -9,12 +9,14 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.fruit = @fruit
 
+    binding.pry
+
     if @review.save
       flash[:notice] = "Review submitted successfully"
       redirect_to @fruit
     else
       flash.now[:errors] = @review.errors.full_messages.to_sentence
-      render :new
+      redirect_to @fruit
     end
   end
 

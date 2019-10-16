@@ -11,4 +11,4 @@ Fruit.create(name: "apple", description: "An apple is a sweet, edible fruit prod
 Fruit.create(name: "apricot", description: "An apricot is a fruit, or the tree that bears the fruit, of several species in the genus Prunus (stone fruits).
 Usually, an apricot tree is from the species P. armeniaca, but the species P. brigantina, P. mandshurica, P. mume, P. zhengheensis and P. sibirica are closely related, have similar fruit, and are also called apricots.", sci_name: "Prunus Armeniaca")
 
-Review.create(user: User.first, fruit: Fruit.find(name: "apple"), rating: 2, body: "There was a worm in my apple, but I still ate it.")
+Review.create(user: User.first, fruit: Fruit.first, rating: 2, body: "There was a worm in my apple, but I still ate it.")
