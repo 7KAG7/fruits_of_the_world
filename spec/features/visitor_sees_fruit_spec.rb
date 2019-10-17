@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "visitor sees content" do
+feature "when visiting the fruits index" do
   scenario "fruits are on the page" do
 
     banana = Fruit.create!(name: "banana", description: "yellow", sci_name: "plantae")
