@@ -5,11 +5,11 @@ feature "visitor sees show" do
 
     oranges = Fruit.create(name: "oranges", description: "the color orange", sci_name: "Citrus × sinensis")
 
-    visit fruits_path
+    visit fruit_path(oranges.id)
 
     expect(page).to have_content("oranges")
     expect(page).to have_content oranges.name
-    expect(page).to have_content oranges.description
+    expect(page).to have_content("the color orange")
     expect(page).to have_content oranges.sci_name
   end
 end
