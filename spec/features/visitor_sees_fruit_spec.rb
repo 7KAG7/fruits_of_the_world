@@ -1,9 +1,11 @@
 require 'rails_helper'
 
-feature "visitor sees content" do
+feature "when visiting the fruits index page" do
   scenario "fruits are on the page" do
 
     banana = Fruit.create!(name: "banana", description: "yellow", sci_name: "plantae")
+    pineapple = Fruit.create!(name: "pineapple", description: "satan apple but delicious", sci_name: "ananas comosus")
+
     visit fruits_path
 
     expect(page).to have_content("Fruits")

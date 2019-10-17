@@ -7,9 +7,7 @@ feature "visitor sees show" do
 
     visit fruit_path(oranges.id)
 
-    expect(page).to have_content("oranges")
     expect(page).to have_content oranges.name
-    expect(page).to have_content("the color orange")
     expect(page).to have_content oranges.sci_name
   end
 end
