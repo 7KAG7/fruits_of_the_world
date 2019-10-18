@@ -1,0 +1,9 @@
+<div>
+  <h1>Review Form</h1>
+
+  <%= form_for [@fruit, @review] do |f| %>
+    Rating: <%= f.number_field :rating %><br/>
+    Body: <%= f.text_field :body %>
+    <%= f.submit %>
+  <% end %>
+</div>

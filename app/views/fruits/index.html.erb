@@ -1,0 +1,11 @@
+<div>
+  <h1>Fruits index</h1>
+
+  <% @fruits.each do |fruit| %>
+  <ul>
+    <li>
+      <%= link_to "#{fruit.name} - #{fruit.sci_name}", fruit_path(fruit) %>
+    </li>
+  </ul>
+  <% end %>
+</div>
