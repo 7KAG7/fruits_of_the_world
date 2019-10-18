@@ -9,8 +9,6 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.fruit = @fruit
 
-    binding.pry
-
     if @review.save
       flash[:notice] = "Review submitted successfully"
       redirect_to @fruit
