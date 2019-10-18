@@ -3,4 +3,17 @@
   <h3><%= @fruit.sci_name %></h3>
   <p><%= @fruit.description %></p>
 
+  <%= form_for [@fruit, @review] do |f| %>
+    Rating: <%= f.number_field :rating %><br/>
+    Body: <%= f.text_field :body %>
+    <%= f.submit %>
+  <% end %>
+
+  <ul>
+    <% @reviews.each do |review| %>
+        <%= review.rating %> <br>
+        <%= review.body %>
+        <%= review.created_at.strftime("%B %d %Y") %>
+      <% end %>
+  </ul>
 </div>

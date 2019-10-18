@@ -5,5 +5,7 @@ class FruitsController < ApplicationController
 
   def show
     @fruit = Fruit.find(params[:id])
+    @review = Review.new
+    @reviews = @fruit.reviews
   end
 end
