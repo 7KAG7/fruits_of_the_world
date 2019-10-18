@@ -9,3 +9,8 @@
   </ul>
   <% end %>
 </div>
+
+<%= form_tag(search_fruits_path, method: :get) do %>
+  <%= text_field_tag 'query', params[:query], placeholder: 'Enter search term...' %>
+  <%= submit_tag 'Search', class: 'alert button expand' %>
+<% end %>
