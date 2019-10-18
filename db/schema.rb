@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_10_17_140810) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name", null: false
     t.string "location"
     t.string "favorite_fruit"
     t.index ["email"], name: "index_users_on_email", unique: true
