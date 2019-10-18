@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
     get 'search', on: :collection
   end
+  
   resources :users, only: [:show]
 
   resources :fruits, only: [:index, :show]

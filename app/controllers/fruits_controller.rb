@@ -15,5 +15,4 @@ class FruitsController < ApplicationController
       @fruits = Fruit.where('name ilike ? or sci_name ilike ?', query, query)
     end
   end
-
 end
