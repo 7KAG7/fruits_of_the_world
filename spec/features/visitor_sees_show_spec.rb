@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "visitor sees show" do
+feature "visitor visits the show page" do
   scenario "details are on the page" do
 
     oranges = Fruit.create(name: "oranges", description: "the color orange", sci_name: "Citrus × sinensis")
