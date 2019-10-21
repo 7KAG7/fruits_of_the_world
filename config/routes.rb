@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   resources :fruits, only: [:index, :show] do
     resources :reviews, only: [:new, :create]
-    get 'search', on: :collection
   end
-  
+
   resources :users, only: [:show]
+  resources :fruits, only: [:index, :show]
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :fruits, only: [:index, :show]
 end
