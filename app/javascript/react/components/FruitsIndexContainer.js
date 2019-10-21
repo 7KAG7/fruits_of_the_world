@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from "react"
-<<<<<<< HEAD
-import './FruitsIndexContainer.css'
-=======
->>>>>>> 7a27f9d5f2436b37e5069f6fc00777a1f81c7b56
 import FruitTile from "./FruitTile"
 
 const FruitsIndexContainer = props => {

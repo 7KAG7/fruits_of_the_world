@@ -11,3 +11,8 @@ body {
   font-family: sans-serif;
   text-align: center;
 }
+.fruit-tile {
+  text-align: center;
+  font-family: fantasy;
+  font-size: 18px;
+}
