@@ -35,10 +35,12 @@ const FruitsIndexContainer = props => {
   })
 
   return (
-    <div className="row">
-      <div className="small-8 small-centered columns">
-        <h1> Fruits Index </h1>
-        {fruitTiles}
+    <div className=".color-change-5x">
+      <div className="row">
+        <div className="small-8 small-centered columns">
+          <h1 id="title"> Replace this text with something smarter </h1>
+          {fruitTiles}
+        </div>
       </div>
     </div>
   )
