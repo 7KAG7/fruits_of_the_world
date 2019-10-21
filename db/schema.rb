@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_10_17_214049) do
-=======
-ActiveRecord::Schema.define(version: 2019_10_17_140810) do
->>>>>>> fruits_api_integration
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
