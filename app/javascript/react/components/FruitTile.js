@@ -4,7 +4,9 @@ import { Link } from "react-router-dom"
 const FruitTile = props => {
   return (
     <div className="fruit-tile">
-      <p> {props.name}</p>
+      <Link to={`/fruits/${props.id}`}>
+        {props.name} - {props.sci_name}
+      </Link>
     </div>
   )
 }
