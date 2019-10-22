@@ -56,3 +56,16 @@ body {
   text-decoration: none;
   color: black;
 }
+
+.field-su {
+  text-align: center;
+}
+
+.field-bttn {
+  text-align: center;
+}
+
+input{
+  width: 30%;
+  height: 30px;
+}
