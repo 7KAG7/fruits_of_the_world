@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Api::V1::FruitsController, type: :controller do
   describe "GET#index" do
     it "should render list of fruits" do
-      fruit1 = Fruit.create(name: "asdjfh", description: "aosdhfglahsdflkjhasd", sci_name: "lqjhwas")
-      fruit2 = Fruit.create(name: "a,msdnf", description: "amsdnbfglqnbdlfnb", sci_name: "okjpij")
-      fruit3 = Fruit.create(name: "werqertwert", description: "mnxcv", sci_name: "kjbojhv")
+      fruit1 = Fruit.create(name: "Watermelon", description: "Can be big, small, and square.", sci_name: "Melonus-Maximus")
+      fruit2 = Fruit.create(name: "Mango", description: "Good for smoothies.", sci_name: "Irdium")
+      fruit3 = Fruit.create(name: "Durian", description: "Smells disgusting.", sci_name: "Doogie bomb")
 
       get :index
 
