@@ -7,6 +7,7 @@ class FruitsController < ApplicationController
     @fruit = Fruit.find(params[:id])
     @review = Review.new
     @reviews = @fruit.reviews
+<<<<<<< HEAD
   end
 
   def search
@@ -14,5 +15,7 @@ class FruitsController < ApplicationController
       query = "%#{params[:query]}%"
       @fruits = Fruit.where('name ilike ? or sci_name ilike ?', query, query)
     end
+=======
+>>>>>>> master
   end
 end
