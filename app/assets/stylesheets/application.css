@@ -1,18 +1,58 @@
-
 nav {
-  font-family: sans-serif;
+  font-family: "optima";
 }
 
 body {
-  background-color: #ccff99;
+  background-color: white;
+}
+
+.header-title {
+  width: 50%;
+  float: left;
+  margin: auto;
+}
+
+.header-title-text {
+  color: black;
+  text-decoration: none;
+  font-family: "bradley hand";
+}
+
+.top-bar-section {
+  width: 50%;
+  float: left;
+  text-align: right;
+}
+
+.signup-link {
+  color: black;
+  text-decoration: none;
+}
+
+.header-title-text:hover {
+  color: green;
+}
+
+.signup-link:hover {
+  color: green;
+}
+
+.fruit-tile-text:hover {
+  color: green;
 }
 
 #title {
-  font-family: sans-serif;
   text-align: center;
+  font-family: "optima";
 }
+
 .fruit-tile {
   text-align: center;
-  font-family: fantasy;
-  font-size: 18px;
+}
+
+.fruit-tile-text {
+  font-family: "optima";
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
 }

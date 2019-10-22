@@ -3,6 +3,10 @@ import FruitTile from "./FruitTile"
 
 const FruitsIndexContainer = props => {
   const [fruits, setFruits] = useState([])
+  const [quote, setQuote] = useState("")
+
+  const quotes = ["this is a quote", "this is NOT a quote", "QUOOOOOOOOOTE"]
+  const randomQuote = quotes[Math.floor(Math.random()*quotes.length)]
 
   useEffect(() => {
     fetch("/api/v1/fruits")
@@ -17,6 +21,7 @@ const FruitsIndexContainer = props => {
     })
     .then((parsedFruits) => {
       setFruits(parsedFruits)
+      setQuote(randomQuote)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
@@ -35,13 +40,9 @@ const FruitsIndexContainer = props => {
   })
 
   return (
-    <div className=".color-change-5x">
-      <div className="row">
-        <div className="small-8 small-centered columns">
-          <h1 id="title"> Replace this text with something smarter </h1>
-          {fruitTiles}
-        </div>
-      </div>
+    <div>
+      <h1 id="title">{quote}</h1>
+      {fruitTiles}
     </div>
   )
 }
