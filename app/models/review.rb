@@ -4,5 +4,4 @@ class Review < ApplicationRecord
 
   belongs_to :fruit
   belongs_to :user
-  has_many :users, through: :reviews
 end

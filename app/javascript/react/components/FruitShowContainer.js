@@ -23,10 +23,7 @@ const FruitShowContainer = (props) => {
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
     },[])
-
-
-
-
+    
   return (
     <FruitShow
       id={fruit.id}
