@@ -29,7 +29,6 @@ const FruitsIndexContainer = props => {
         name={fruit.name}
         description={fruit.description}
         sci_name={fruit.sci_name}
-        // image={fruit.image}
       />
     )
   })
