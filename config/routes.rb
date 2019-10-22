@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :fruits, only: [:index, :show] do
         resources :reviews, only: [:index]
       end
+      resources :reviews, only: [:create]
     end
   end
 end

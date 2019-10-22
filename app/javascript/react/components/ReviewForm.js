@@ -40,35 +40,36 @@ const ReviewFormContainer = props => {
     }
   }
 
+  const addNewReview = (event) => {
+    setNewReview({
+      ...newReview, [event.currentTarget.id]: event.currentTarget.value
+    })
+  }
+
+  const clearForm = () => {
+    event.preventDefault()
+    setNewReview(formDetails)
+  }
+
+
+
   return (
-    const addNewReview = (event) => {
-      setNewReview({
-        ...newReview, [event.currentTarget.id]: event.currentTarget.value
-      })
-    }
-
-    const clearForm = () => {
-      event.preventDefault()
-      setNewReview(formDetails)
-    }
-
-    const onSubmitHandler = (event) => {
-      event.preventDefault()
-      props.addNewReview(newReview)
-      clearForm()
-    }
-
-    return (
-    <form className="new-article-form callout" onSubmit={onSubmitHandler}>
+    <form className="new-review-form" onSubmit={postNewReview}>
       <label>
         Fruit Review
-        <input
+        <select
           name="rating"
-          type="number"
-          id="title"
+          type="select"
+          id="rating"
           onChange={addNewReview}
-          value={newReview.rating}
-        />
+          value={newReview.rating}>
+          <option name=""></option>
+          <option name="1">1</option>
+          <option name="2">2</option>
+          <option name="3">3</option>
+          <option name="4">4</option>
+          <option name="5">5</option>
+        </select>
       </label>
       <label>
         Article Body
@@ -87,7 +88,4 @@ const ReviewFormContainer = props => {
   )
 }
 
-  )
-}
-
-export default FruitsIndexContainer
+export default ReviewFormContainer

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import FruitShow from "./FruitShow"
+import ReviewForm from "./ReviewForm"
 
 const FruitShowContainer = (props) => {
   const [fruit, setFruit] = useState({})
@@ -23,14 +24,23 @@ const FruitShowContainer = (props) => {
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
     },[])
-    
+
   return (
+    <div>
+    <div>
     <FruitShow
       id={fruit.id}
       name={fruit.name}
       description={fruit.description}
       sci_name={fruit.sci_name}
     />
+    </div>
+    <div>
+    <ReviewForm
+      
+    />
+    </div>
+    </div>
   )
 }
 
