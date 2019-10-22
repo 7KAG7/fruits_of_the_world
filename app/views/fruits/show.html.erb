@@ -3,9 +3,8 @@
   <h3><%= @fruit.sci_name %></h3>
   <p><%= @fruit.description %></p>
 
-  <h1>Submit Your Own Review</h1>
-
 <% if current_user %>
+  <h1>Submit Your Own Review</h1>
   <%= form_for [@fruit, @review] do |f| %>
     <%= f.label :rating %>
     <%= f.number_field :rating %> <br/>

@@ -4,14 +4,12 @@
   <% if !@fruits %>
   <p>No results found.</p>
   <% else %>
-
   <p><%= "#{@fruits.count} result(s) found." %></p>
-
   <ul>
     <% @fruits.each do |fruit| %>
-    <li>
-      <%= link_to "#{fruit.name} - #{fruit.sci_name}", fruit_path(fruit) %>
-    </li>
+      <li>
+        <%= link_to "#{fruit.name} - #{fruit.sci_name}", fruit_path(fruit) %>
+      </li>
     <% end %>
   </ul>
   <% end %>

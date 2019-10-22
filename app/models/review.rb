@@ -3,6 +3,6 @@ class Review < ApplicationRecord
   validates :body, presence: true
 
   belongs_to :fruit
+  belongs_to :user
   has_many :users, through: :reviews
-  has_many :countries, through: :fruits_of_countries
 end
