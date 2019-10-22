@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  root 'fruits#index'
+  root 'homes#index'
+  get '/fruits', to: 'homes#index'
+  get '/fruits/:id', to: 'homes#index'
+  get '/fruits/:id/reviews', to: 'homes#index'
+
   devise_for :users
 
-  resources :fruits, only: [:index, :show] do
-    resources :reviews, only: [:new, :create]
+  namespace :api do
+    namespace :v1 do
+      resources :fruits, only: [:index, :show] do
+        resources :reviews, only: [:index]
+      end
+    end
   end
-
-  resources :users, only: [:show]
-  resources :fruits, only: [:index, :show]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
 end

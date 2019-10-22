@@ -3,17 +3,30 @@
   <h3><%= @fruit.sci_name %></h3>
   <p><%= @fruit.description %></p>
 
+<% if current_user %>
+  <h1>Submit Your Own Review</h1>
   <%= form_for [@fruit, @review] do |f| %>
-    Rating: <%= f.number_field :rating %><br/>
-    Body: <%= f.text_field :body %>
-    <%= f.submit %>
+    <%= f.label :rating %>
+    <%= f.number_field :rating %> <br/>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+    <%= f.hidden_field :user_id %>
+    <%= f.submit "Submit Review" %>
   <% end %>
-
-  <ul>
-    <% @reviews.each do |review| %>
-        <%= review.rating %> <br>
-        <%= review.body %>
-        <%= review.created_at.strftime("%B %d %Y") %>
-      <% end %>
-  </ul>
+<% end %>
 </div>
+
+<h3>Reviews</h3>
+  <div class="reviews-table">
+    <ul>
+      <% @reviews.each do |review| %>
+        <strong>Review:</strong>
+        <%= review.body %> <br />
+        <strong>Rating:</strong>
+        <%= review.rating %> <br />
+        <strong>Reviewed On:</strong>
+        <%= review.created_at.strftime("%B %d %Y") %> <br />
+      <br />
+      <% end %>
+    </ul>
+  </div>
