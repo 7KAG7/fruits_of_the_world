@@ -7,15 +7,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :fruits, only: [:index, :show]
+      resources :fruits, only: [:index, :show] do
+        resources :reviews, only: [:index]
+      end
     end
   end
-  # resources :fruits, only: [:index, :show] do
-  #   resources :reviews, only: [:new, :create]
-  #   get 'search', on: :collection
-  # end
-  #
-  # resources :users, only: [:show]
-  #
-  # resources :fruits, only: [:index, :show]
 end

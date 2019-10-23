@@ -15,7 +15,7 @@ const FruitsIndexContainer = props => {
   const randomQuote = quotes[Math.floor(Math.random()*quotes.length)]
 
   useEffect(() => {
-    fetch("/api/v1/fruits")
+    fetch('/api/v1/fruits')
     .then((response) => {
       if (response.ok) {
         return response.json()
@@ -40,7 +40,6 @@ const FruitsIndexContainer = props => {
         name={fruit.name}
         description={fruit.description}
         sci_name={fruit.sci_name}
-        // image={fruit.image}
       />
     )
   })
