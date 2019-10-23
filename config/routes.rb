@@ -2,10 +2,7 @@ Rails.application.routes.draw do
   root 'homes#index'
   get '/fruits', to: 'homes#index'
   get '/fruits/:id', to: 'homes#index'
-<<<<<<< HEAD
   get '/fruits/:id/reviews', to: 'homes#index'
-=======
->>>>>>> origin/css_two
 
   devise_for :users
 

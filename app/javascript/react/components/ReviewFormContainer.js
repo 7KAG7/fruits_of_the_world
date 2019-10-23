@@ -15,35 +15,11 @@ const ReviewFormContainer = props => {
     })
   }
 
-  const handleFruitForm = formPayload => {
-    fetch("/api/v1/reviews", {
-      method: "POST",
-      body: JSON.stringify(newReview),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        return response
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-          error = new Error(errorMessage)
-        throw(error)
-      }
-    })
-    .then(response => response.json())
-    .then((addedNewReview) => {
-      setNewReviews([...newReviews, addedNewReview])
-    })
-  }
-
   return(
-    <form onSubmit={handleFruitForm} className="new-fruit-form callout">
+    <form onSubmit={props.handleFruitForm} className="new-fruit-form callout">
       <label htmlFor="rating">
         Fruit Rating
-        <select name="rating" value={newReview.rating} onChange={handleFruitFieldChange}>
+        <select name="rating" value={newReview.rating} onChange={props.handleFruitFieldChange}>
             <option name=""></option>
             <option name="1">1</option>
             <option name="2">2</option>
