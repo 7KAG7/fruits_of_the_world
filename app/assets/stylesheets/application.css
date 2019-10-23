@@ -27,6 +27,7 @@ body {
 .signup-link {
   color: black;
   text-decoration: none;
+  vertical-align: top;
 }
 
 .header-title-text:hover {
