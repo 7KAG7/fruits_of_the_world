@@ -13,14 +13,13 @@
 
     <section class="top-bar-section">
       <%- if current_user -%>
-        <p><%= link_to 'Sign Out', destroy_user_session_path, class: "signup-link", method: :delete %></p>
+        <p><%= link_to 'Profile', edit_user_registration_path, class: "signup-link", method: :get %> | <%= link_to 'Sign Out', destroy_user_session_path, class: "signup-link", method: :delete %> </p>
+
       <%- else -%>
         <p><%= link_to 'Sign Up', new_user_registration_path, class: "signup-link" %> | <%= link_to 'Sign In', new_user_session_path, class: "signup-link" %></p>
       <%- end -%>
     </section>
   </nav>
-
-
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
