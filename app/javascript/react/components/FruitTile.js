@@ -4,12 +4,7 @@ import { Link } from "react-router-dom"
 const FruitTile = props => {
   return (
     <div className="grid-x">
-<<<<<<< HEAD
-      <div className="image-container">
-      <Link to={`/fruits/${props.id}`} className="fruit-tile-text">
-=======
       <div class="image-container">
->>>>>>> fruit_images
         <div className="grid small-6 medium-6">
           <Link to={`/fruits/${props.id}`} className="fruit-tile-text">
             <img className="fruit-tile-image"  src={props.fruit_image}/>
