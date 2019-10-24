@@ -60,7 +60,7 @@ Fruit.create(name: "Grapes", description: "A grape is a fruit, botanically a ber
 
 #Guava
 
-Fruit.create(name: "Guava", description: "Guava is a common tropical fruit cultivated in many tropical and subtropical regions. Psidium guajava (common guava, lemon guava) is a small tree in the myrtle family (Myrtaceae), native to Mexico, Central America, the Caribbean and northern South America. Although related species may also be called guavas, they belong to other species or genera, such as the pineapple guava, Acca sellowiana. In 2016, India was the largest producer of guavas, with 41% of the world total.", sci_name: "Psidium guava", fruit_image: "http://servingjoy.com/wp-content/uploads/2014/12/Fresh-pink-brazalian-Guavas.jpg")
+Fruit.create(name: "Guava", description: "Guava is a common tropical fruit cultivated in many tropical and subtropical regions. Psidium guajava (common guava, lemon guava) is a small tree in the myrtle family (Myrtaceae), native to Mexico, Central America, the Caribbean and northern South America. Although related species may also be called guavas, they belong to other species or genera, such as the pineapple guava, Acca sellowiana. In 2016, India was the largest producer of guavas, with 41% of the world total.", sci_name: "Psidium guava", fruit_image: "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/benefits-of-guavas-1296x728-feature.jpg?w=1155&h=1528")
 
 #Gooseberry
 

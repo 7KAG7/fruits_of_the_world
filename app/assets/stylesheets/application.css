@@ -3,7 +3,7 @@ nav {
 }
 
 body {
-  background-color: white;
+  background-color: #D9F3FC;
   display: block;
 }
 
@@ -74,18 +74,28 @@ input{
 .grid-x {
   display: inline-grid;
   padding: 10px;
-  width: 170px;
   margin: auto;
 }
 
-.fruit-image {
+.fruit-image{
   display: block;
-  width: 500px;
+  width: 700px;
+  height: 500px;
   margin: auto;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
+  /* padding: 5px; */
 }
 
 .fruit-tile-image {
-  width: 150px;
-  border: 1px solid #000;
+  width: 262px;
+  height: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: .5s;
+  backface-visibility: hidden;
+  /* border: 1px solid #000; */
+}
+
+.image-container:hover {
+  opacity: 0.4;
 }
