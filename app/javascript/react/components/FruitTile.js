@@ -7,17 +7,15 @@ const FruitTile = props => {
       <div class="image-container">
         <div className="grid small-6 medium-6">
           <Link to={`/fruits/${props.id}`} className="fruit-tile-text">
-            <img className="fruit-tile-image" src={props.fruit_image}/>
+            <img className="fruit-tile-image"  src={props.fruit_image}/>
+            <div class="middle">
+              <a class="text">{props.name}</a>
+            </div>
           </Link>
         </div>
-    <div class="text">{props.name}</div>
       </div>
     </div>
   )
 }
 
 export default FruitTile
-
-// <div class="middle">
-//   <div class="fruit-text">What</div>
-// </div>
