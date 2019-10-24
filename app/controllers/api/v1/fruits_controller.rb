@@ -4,6 +4,7 @@ class Api::V1::FruitsController < ApplicationController
   end
 
   def show
-    render json: Fruit.find(params[:id])
+    fruit = Fruit.find(params[:id])
+    render json: {fruit:fruit , reviews:fruit.reviews}
   end
 end
