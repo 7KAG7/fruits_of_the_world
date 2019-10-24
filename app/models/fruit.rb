@@ -4,5 +4,4 @@ class Fruit < ApplicationRecord
 
   has_many :reviews
   has_many :users, through: :reviews
-  has_many :countries, through: :fruits_of_countries
 end

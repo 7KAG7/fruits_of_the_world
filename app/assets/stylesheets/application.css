@@ -1,18 +1,133 @@
-
 nav {
-  font-family: sans-serif;
+  font-family: "optima";
 }
 
 body {
-  background-color: #ccff99;
+  background-color: #D9F3FC;
+  display: block;
+}
+
+.header-title {
+  width: 50%;
+  float: left;
+  margin: auto;
+}
+
+.header-title-text {
+  color: black;
+  text-decoration: none;
+  font-family: "bradley hand";
+  transition: .3s ease;
+}
+
+.top-bar-section {
+  width: 50%;
+  float: left;
+  text-align: right;
+}
+
+.signup-link {
+  color: black;
+  text-decoration: none;
+  transition: .3s ease;
+}
+
+.header-title-text:hover {
+  color: green;
+  transition: .3s ease;
+}
+
+.signup-link:hover {
+  color: green;
+  transition: .3s ease;
+}
+
+.fruit-tile-text:hover {
+  color: green;
 }
 
 #title {
-  font-family: sans-serif;
   text-align: center;
+  font-family: "optima";
 }
+
 .fruit-tile {
   text-align: center;
-  font-family: Arial;
-  font-size: 18px;
+}
+
+.fruit-tile-text {
+  font-family: "optima";
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.field-su {
+  text-align: center;
+}
+
+.field-bttn {
+  text-align: center;
+}
+
+input{
+  width: 20%;
+}
+
+.grid-x {
+  display: inline-grid;
+  padding: 10px;
+  margin: auto;
+}
+
+.fruit-image{
+  display: block;
+  width: 700px;
+  height: 500px;
+  margin: auto;
+}
+
+.fruit-tile-image {
+  width: 262px;
+  height: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.3s ease;
+  backface-visibility: hidden;
+}
+
+.image-container {
+  transition-property: opacity;
+  transition: 0.3s ease;
+}
+
+.image-container:hover .fruit-tile-image{
+  filter: brightness(50%);
+}
+
+.image-container:hover .middle {
+  opacity: 1;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  transform: translate(-20px, -50px);
+}
+
+.text {
+  color: white;
+  font-size: 30px;
+  padding: 16px 32px;
+}
+
+.fruit-description {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.new-review-form {
+  
 }

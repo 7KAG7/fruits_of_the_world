@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react"
 import FruitTile from "./FruitTile"
+import quotes from "../../packs/quotes.js"
 
 const FruitsIndexContainer = props => {
   const [fruits, setFruits] = useState([])
+  const [quote, setQuote] = useState([])
+
+  const randomQuote = quotes[Math.floor(Math.random()*quotes.length)]
 
   useEffect(() => {
-    fetch('/api/v1/fruits')
+    fetch(`/api/v1/fruits`)
     .then((response) => {
       if (response.ok) {
         return response.json()
@@ -17,6 +21,7 @@ const FruitsIndexContainer = props => {
     })
     .then((parsedFruits) => {
       setFruits(parsedFruits)
+      setQuote(randomQuote)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
@@ -29,18 +34,21 @@ const FruitsIndexContainer = props => {
         name={fruit.name}
         description={fruit.description}
         sci_name={fruit.sci_name}
+        fruit_image={fruit.fruit_image}
       />
     )
   })
 
   return (
-    <div className=".color-change-5x">
-      <div className="row">
-        <div className="small-8 small-centered columns">
-          <h1 id="title"> Replace this text with something smarter </h1>
-          {fruitTiles}
-        </div>
-      </div>
+    <div>
+      <center>
+        <h1 id="title">{quote[0]}</h1>
+        <h3>{quote[1]}</h3>
+        {fruitTiles}
+        <br></br><br></br>
+        <a href="/sources" class="signup-link">Sources</a> | <a href="/credits" class="signup-link">Credits</a>
+        <br></br><br></br>
+      </center>
     </div>
   )
 }
