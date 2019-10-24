@@ -4,6 +4,7 @@ nav {
 
 body {
   background-color: white;
+  display: block;
 }
 
 .header-title {
@@ -70,9 +71,21 @@ input{
   height: 30px;
 }
 
+.grid-x {
+  display: inline-grid;
+  padding: 10px;
+  width: 170px;
+  margin: auto;
+}
+
 .fruit-image {
   display: block;
   width: 500px;
   margin: auto;
+  border: 1px solid #000;
+}
+
+.fruit-tile-image {
+  width: 150px;
   border: 1px solid #000;
 }
