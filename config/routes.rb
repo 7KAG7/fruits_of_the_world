@@ -13,4 +13,6 @@ Rails.application.routes.draw do
       end
     end
   end
+  resources :sources, only: [:index]
+  resources :credits, only: [:index]
 end
