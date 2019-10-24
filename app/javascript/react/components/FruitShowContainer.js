@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
 import _ from "lodash"
-
 import FruitShow from "./FruitShow"
 import ReviewFormContainer from "./ReviewFormContainer"
 import ReviewTile from "./ReviewTile"
@@ -11,26 +10,6 @@ const FruitShowContainer = (props) => {
   const [shouldRedirect, setShouldRedirect] = useState(false)
   const [errors, setErrors] = useState({})
   const [reviews, setReviews] = useState([])
-  const [newReview, setNewReview] = useState({
-    rating: "",
-    body: "",
-    fruitId: props.fruitId
-  })
-
-  const validForSubmission = () => {
-    let submitErrors = {}
-    const requiredFields = ["rating", "body"]
-    requiredFields.forEach(field => {
-      if (newReview[field].trim() === "") {
-        submitErrors = {
-          ...submitErrors,
-          [field]: "can't be blank"
-        }
-      }
-    })
-    setErrors(submitErrors)
-    return _.isEmpty(submitErrors)
-  }
 
   const fruitId = props.match.params.id
   const fetchFruit = `/api/v1/fruits/${fruitId}`
@@ -56,11 +35,11 @@ const FruitShowContainer = (props) => {
 
     const postNewReview = (postReview) => {
       event.preventDefault()
-      if (validForSubmission()) {
+      postReview.fruitId = fruitId
         fetch(`/api/v1/fruits/${fruitId}/reviews`, {
           credentials: "same-origin",
           method: "POST",
-          body: JSON.stringify(newReview),
+          body: JSON.stringify(postReview),
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json"
@@ -77,26 +56,16 @@ const FruitShowContainer = (props) => {
         })
         .then(response => response.json())
         .then(body => {
-          if (body.id) {
+          if (body.fruit.id) {
             setReviews(body.reviews)
           } else {
             setErrors(body.errors)
-            setNewReview(body.fields)
           }
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`))
-      }
     }
 
-    const addNewReview = (event) => {
-      event.preventDefault()
-      setNewReview({
-        ...newReview, [event.currentTarget.id]: event.currentTarget.value
-      })
-    }
-
-  let reviewTiles =  reviews.map(review => {
-    debugger
+  let reviewTiles = reviews.map(review => {
     return(
       <ReviewTile
         key={review.id}
@@ -121,9 +90,7 @@ return (
     </div>
     <div>
       <ReviewFormContainer
-        fruitId={fruitId}
-        newReview={newReview}
-        addNewReview={addNewReview}
+        fruitId={props.fruitId}
         postNewReview={postNewReview}
       />
     </div>

@@ -2,8 +2,28 @@ import React, { useState, useEffect } from "react"
 
 const ReviewFormContainer = props => {
 
+  const [newReview, setNewReview] = useState({
+    rating: "",
+    body: "",
+    fruitId: props.fruitId
+  })
+
+  const addNewReview = (event) => {
+    event.preventDefault()
+    setNewReview({
+      ...newReview, [event.currentTarget.id]: event.currentTarget.value
+    })
+  }
+
+  const formSubmit = (event) =>{
+    event.preventDefault
+    let formPayLoad = newReview
+    props.postNewReview(formPayLoad)
+  }
+
+
   return(
-    <form onSubmit={props.postNewReview} className="new-review-form">
+    <form onSubmit={formSubmit} className="new-review-form">
       <ul>
         <label htmlFor="rating">
           Fruit Rating
@@ -11,8 +31,8 @@ const ReviewFormContainer = props => {
             name="rating"
             id="rating"
             type="select"
-            value={props.newReview.rating}
-            onChange={props.addNewReview}
+            value={newReview.rating}
+            onChange={addNewReview}
           >
               <option name=""></option>
               <option name="1">1</option>
@@ -28,8 +48,8 @@ const ReviewFormContainer = props => {
             name="body"
             id="body"
             type="text"
-            value={props.newReview.body}
-            onChange={props.addNewReview}
+            value={newReview.body}
+            onChange={addNewReview}
           />
         </label>
       </ul>
