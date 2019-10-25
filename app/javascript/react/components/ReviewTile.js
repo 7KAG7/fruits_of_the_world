@@ -2,9 +2,16 @@ import React from "react"
 
 const ReviewTile = props => {
   return(
+    <center>
     <div className="review-box">
-      <p>{props.rating}: {props.body}</p>
+      <div className="review-rating">
+        Rating: {props.rating}
+      </div>
+      <div className="review-comment">
+        Comment: {props.body}
+      </div>
     </div>
+    </center>
   )
 }
 

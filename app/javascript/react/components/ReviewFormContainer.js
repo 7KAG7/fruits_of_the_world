@@ -16,9 +16,13 @@ const ReviewFormContainer = props => {
   }
 
   const formSubmit = (event) =>{
-    event.preventDefault
+    event.preventDefault()
     let formPayLoad = newReview
     props.postNewReview(formPayLoad)
+    setNewReview({
+      rating: "",
+      body: ""
+    })
   }
 
   return(
