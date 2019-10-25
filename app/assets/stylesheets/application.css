@@ -5,6 +5,7 @@ nav {
 body {
   background-color: #D9F3FC;
   display: block;
+  font-family: "optima";
 }
 
 .header-title {
@@ -128,6 +129,8 @@ input{
   margin-right: 25%;
 }
 
-.new-review-form {
-  
+.review-box {
+  margin: auto;
+  display: block;
+  padding: 15px;
 }
